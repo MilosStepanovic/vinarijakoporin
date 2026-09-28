@@ -316,3 +316,8 @@ section{position:relative;}
 html,body{max-width:100%;overflow-x:hidden;}
 .split__media{min-width:0;}
 .split__media img{min-width:0;}
+html,body{max-width:100%;overflow-x:hidden;}
+.split__media{min-width:0;}
+.split__media img{min-width:0;}
+.hero{min-height:clamp(440px,66vh,660px);}
+.hero:not(.hero--center){background-position:center 40% !important;}
