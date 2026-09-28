@@ -321,3 +321,11 @@ html,body{max-width:100%;overflow-x:hidden;}
 .split__media img{min-width:0;}
 .hero{min-height:clamp(440px,66vh,660px);}
 .hero:not(.hero--center){background-position:center 40% !important;}
+.hero::after{background:transparent;}
+.hero:not(.hero--center)::after{background:linear-gradient(90deg,rgba(18,10,7,.66) 0%,rgba(18,10,7,.36) 44%,rgba(18,10,7,0) 80%);}
+.hero--center::after{background:radial-gradient(ellipse 95% 82% at center, rgba(16,9,6,.54) 0%, rgba(16,9,6,.26) 55%, rgba(16,9,6,.06) 100%);}
+.hero__title{text-shadow:0 2px 18px rgba(0,0,0,.92),0 1px 4px rgba(0,0,0,.95),0 0 3px rgba(0,0,0,.7);}
+.hero__eyebrow{text-shadow:0 1px 5px rgba(0,0,0,.9),0 2px 12px rgba(0,0,0,.8);}
+.hero__lead{text-shadow:0 1px 8px rgba(0,0,0,.85),0 1px 3px rgba(0,0,0,.9);}
+.scene:has(img[alt="Posluženje na buretu"]) .ph{height:340px;}
+img[alt="Posluženje na buretu"]{object-position:center 22% !important;}
