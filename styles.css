@@ -313,3 +313,6 @@ section{position:relative;}
   .hero__btns .btn{flex:1 1 auto;text-align:center;}
   .orn::before,.orn::after{display:none;}
 }
+html,body{max-width:100%;overflow-x:hidden;}
+.split__media{min-width:0;}
+.split__media img{min-width:0;}
