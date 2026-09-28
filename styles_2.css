@@ -1,0 +1,315 @@
+/* ==========================================================================
+   Vinarija manastira Koporin — zajednički stilovi (responsive)
+   ========================================================================== */
+
+:root{
+  --parchment:#F3EADB;
+  --band:#EAE0CD;
+  --band2:#E3D6BC;
+  --card:#F6EFE0;
+  --ink:#2E1B14;
+  --text:#4A3A2C;
+  --text2:#5A4A3A;
+  --muted:#8A7860;
+  --wine:#4A1E1E;
+  --wine2:#7C2D2D;
+  --gold:#B07A2E;
+  --gold2:#C39A5E;
+  --gold3:#D8B36A;
+  --cream:#EAC77A;
+  --strip:#241812;
+  --border:#DCC9A8;
+  --maxw:1180px;
+}
+
+*,*::before,*::after{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  background:var(--parchment);
+  color:var(--text);
+  font-family:'EB Garamond',Georgia,serif;
+  font-size:18px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+img{display:block;max-width:100%;}
+a{color:var(--wine2);}
+a:hover{color:#5A2222;}
+
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px;width:100%;}
+
+h1,h2,h3{margin:0;color:var(--ink);font-weight:600;}
+h1{font-family:'Cormorant Garamond',serif;}
+h2,h3{font-family:'Fraunces',serif;}
+
+.kicker{
+  font-family:'EB Garamond',serif;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  font-size:.78rem;
+  font-weight:700;
+  color:var(--gold);
+  margin-bottom:14px;
+}
+.section-title{
+  font-family:'Fraunces',serif;
+  font-weight:600;
+  font-size:clamp(1.7rem,3.4vw,2.375rem); /* ~27–38px */
+  line-height:1.14;
+  color:var(--ink);
+}
+.divider{display:block;margin-bottom:18px;}
+
+/* Buttons ------------------------------------------------------------------ */
+.btn{
+  display:inline-block;
+  font-family:'EB Garamond',serif;
+  font-size:1.05rem;
+  text-decoration:none;
+  padding:14px 30px;
+  font-weight:600;
+  border:1px solid transparent;
+  transition:background .2s,color .2s;
+}
+.btn--gold{background:var(--gold3);color:#3A1A12;}
+.btn--gold:hover{background:#E0BE72;color:#3A1A12;}
+.btn--outline{border-color:#C9A15E;color:#F3EADB;}
+.btn--outline:hover{background:rgba(201,161,94,.16);color:#F3EADB;}
+.btn--dark{background:var(--wine);color:var(--parchment);}
+.btn--dark:hover{background:#5c2626;color:var(--parchment);}
+
+/* Header / nav ------------------------------------------------------------- */
+.site-header{
+  position:sticky;top:0;z-index:50;
+  background:var(--ink);color:var(--parchment);
+  border-bottom:1px solid #4A3226;
+}
+.site-header .wrap{
+  display:flex;align-items:center;justify-content:space-between;
+  gap:14px 28px;flex-wrap:wrap;padding-top:14px;padding-bottom:14px;
+}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--parchment);}
+.brand svg{flex:0 0 auto;}
+.brand span{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(1.5rem,3.4vw,2rem);
+  font-weight:600;letter-spacing:.4px;line-height:1;
+}
+.nav{display:flex;gap:clamp(18px,3vw,38px);flex-wrap:wrap;}
+.nav a{
+  font-family:'EB Garamond',serif;font-size:1.1rem;
+  color:var(--parchment);text-decoration:none;padding-bottom:2px;
+}
+.nav a:hover{color:var(--cream);}
+.nav a.is-active{color:#E8D6B0;border-bottom:1px solid var(--gold);}
+
+/* Hero --------------------------------------------------------------------- */
+.hero{
+  position:relative;overflow:hidden;color:var(--parchment);
+  background-size:cover;background-position:center 44%;
+  display:flex;align-items:center;
+  min-height:clamp(320px,46vh,440px);
+}
+.hero::after{
+  content:"";position:absolute;inset:0;z-index:1;
+  background:linear-gradient(180deg,rgba(40,24,18,.42) 0%,rgba(28,15,11,.6) 50%,rgba(40,24,18,.5) 100%);
+}
+.hero .wrap{position:relative;z-index:2;padding-top:56px;padding-bottom:56px;}
+.hero__title{
+  font-family:'Cormorant Garamond',serif;font-weight:600;
+  font-size:clamp(2.3rem,6vw,3.75rem); /* ~37–60px */
+  line-height:1.06;margin:0;color:#FBF3E0;
+  text-shadow:0 2px 16px rgba(0,0,0,.85),0 1px 3px rgba(0,0,0,.9);
+}
+.hero__lead{
+  font-size:clamp(1.05rem,2.2vw,1.45rem);line-height:1.6;
+  max-width:620px;margin:22px 0 34px;color:#E8D6B0;
+  text-shadow:0 1px 6px rgba(0,0,0,.5);
+}
+.hero__btns{display:flex;gap:16px;flex-wrap:wrap;}
+/* centered hero (Vina, Poseta) */
+.hero--center{text-align:center;justify-content:center;}
+.hero--center .wrap{display:flex;flex-direction:column;align-items:center;}
+.hero--center .hero__eyebrow{
+  font-family:'EB Garamond',serif;letter-spacing:4px;text-transform:uppercase;
+  font-size:.85rem;color:var(--cream);margin-bottom:16px;
+  text-shadow:0 1px 6px rgba(0,0,0,.7);
+}
+.hero--wine{background:var(--wine);}
+.hero--wine::after{
+  background:linear-gradient(180deg,rgba(40,20,18,.42) 0%,rgba(52,20,20,.28) 45%,rgba(40,20,18,.55) 100%);
+}
+.hero__title--gold{color:var(--cream);letter-spacing:.5px;}
+
+/* Sections ----------------------------------------------------------------- */
+section{position:relative;}
+.section{padding:clamp(56px,7vw,88px) 0;}
+.sec-parchment{background:var(--parchment);}
+.sec-band{background:var(--band);}
+.sec-band2{background:var(--band2);}
+.sec-clay{background:#C9BCA1;box-shadow:inset 0 1px 2px #F3EADB;}
+.sec-dark{background:var(--ink);color:var(--parchment);}
+.sec-wine{background:var(--wine);color:var(--parchment);}
+
+/* subtle corner vine ornament */
+.orn::before,.orn::after{
+  content:"";position:absolute;width:74px;height:90px;
+  background:url("vine.svg") no-repeat center/contain;
+  opacity:.15;pointer-events:none;z-index:0;
+}
+.orn::before{right:26px;top:30px;transform:scaleX(-1);}
+.orn::after{left:26px;bottom:30px;transform:scaleY(-1);}
+.orn > *{position:relative;z-index:1;}
+
+/* Split (image + text) ----------------------------------------------------- */
+.split{display:flex;gap:clamp(28px,5vw,56px);align-items:center;flex-wrap:wrap;}
+.split__media{flex:1 1 380px;min-width:0;}
+.split__media img{width:100%;height:100%;object-fit:cover;border:1px solid #D2BE9C;aspect-ratio:16/13;}
+.split__body{flex:1 1 380px;min-width:0;}
+.split__body p{color:var(--text);margin:0 0 16px;font-size:1.12rem;line-height:1.75;}
+.split__body p:last-child{margin-bottom:0;}
+.split--reverse{flex-direction:row-reverse;}
+
+/* Vino preview cards (Naslovna) -------------------------------------------- */
+.head-row{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap;margin-bottom:40px;}
+.link-more{font-family:'EB Garamond',serif;color:var(--wine2);text-decoration:none;border-bottom:1px solid var(--gold2);padding-bottom:3px;white-space:nowrap;}
+.vino-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;}
+.vino-card{background:var(--card);border:1px solid var(--border);display:flex;flex-direction:column;}
+.vino-card__img{position:relative;height:230px;overflow:hidden;display:flex;align-items:flex-end;padding:14px 18px;
+  background:linear-gradient(180deg,#5A1F22,#28211a);}
+.vino-card__img img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;}
+.vino-card__img.is-white{background:linear-gradient(180deg,#B68727,#28211a);}
+.vino-card__tag{position:relative;font-size:.85rem;color:#F3EADB;letter-spacing:1px;text-shadow:0 1px 4px rgba(0,0,0,.7);}
+.vino-card__body{padding:26px 26px 30px;}
+.vino-card__body h3{font-size:1.35rem;margin-bottom:8px;}
+.vino-card__body p{margin:0;font-size:1rem;line-height:1.6;color:var(--text2);}
+
+/* Wine list cards (Vina) --------------------------------------------------- */
+.wine-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:40px;}
+.wine-card{display:flex;background:var(--card);border:1px solid var(--border);min-height:300px;}
+.wine-card__img{
+  width:230px;flex:0 0 230px;background:var(--strip);position:relative;overflow:hidden;
+  display:flex;align-items:flex-end;padding:16px;
+}
+.wine-card__img img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;}
+.wine-card__img span{
+  position:relative;font-size:.72rem;color:#EAD9AE;letter-spacing:1px;
+  writing-mode:vertical-rl;transform:rotate(180deg);text-shadow:0 1px 4px rgba(0,0,0,.85);
+}
+.wine-card__body{padding:30px 32px;flex:1 1 auto;display:flex;flex-direction:column;}
+.wine-card__body .tag{font-family:'EB Garamond',serif;letter-spacing:2px;text-transform:uppercase;font-size:.72rem;color:var(--gold);margin-bottom:10px;}
+.wine-card__body h3{font-size:1.4rem;margin-bottom:14px;}
+.wine-card__body p{margin:0;font-size:1.02rem;line-height:1.6;color:var(--text2);}
+.wine-card__meta{margin-top:auto;display:flex;justify-content:space-between;align-items:baseline;padding-top:20px;gap:12px;flex-wrap:wrap;}
+.wine-card__price{font-family:'Fraunces',serif;font-size:1.3rem;color:var(--wine2);font-weight:600;}
+.wine-card__sub{font-size:.92rem;color:var(--muted);}
+.group-title{margin-bottom:34px;}
+.group-title + .wine-grid{margin-bottom:0;}
+.group-gap{margin-top:60px;}
+
+/* Quote band --------------------------------------------------------------- */
+.quote{text-align:center;}
+.quote p{font-family:'Fraunces',serif;font-style:italic;font-weight:500;
+  font-size:clamp(1.5rem,3.4vw,2.1rem);line-height:1.4;margin:0;color:#F0E4CC;}
+.quote .src{font-family:'EB Garamond',serif;letter-spacing:2px;text-transform:uppercase;font-size:.8rem;color:var(--gold);margin-top:20px;}
+
+/* Info cards (Poseta) ------------------------------------------------------ */
+.lead{font-size:clamp(1.1rem,2.2vw,1.3rem);line-height:1.7;color:var(--text);max-width:820px;margin:0 0 44px;}
+.info-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;}
+.info-card{background:var(--card);border:1px solid var(--border);padding:34px 30px;}
+.info-card svg{margin-bottom:18px;}
+.info-card h3{font-size:1.4rem;margin-bottom:16px;}
+.info-card .lines{font-size:1.02rem;line-height:1.9;color:var(--text2);}
+.info-card .muted{margin-top:8px;color:var(--muted);}
+
+/* Šta poseta uključuje + price box ---------------------------------------- */
+.include{display:flex;gap:clamp(28px,5vw,56px);align-items:center;flex-wrap:wrap;}
+.include__list{flex:1 1 420px;min-width:0;}
+.include__list ul{list-style:none;margin:22px 0 0;padding:0;font-size:1.1rem;line-height:2;color:var(--text);}
+.include__list li{display:flex;gap:14px;align-items:baseline;}
+.include__list li::before{content:"✦";color:var(--wine2);}
+.price-box{
+  flex:1 1 340px;max-width:440px;min-width:0;position:relative;overflow:hidden;
+  color:var(--parchment);text-align:center;padding:44px 38px;
+  background:var(--wine);
+}
+.price-box img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;}
+.price-box::after{content:"";position:absolute;inset:0;z-index:1;
+  background:linear-gradient(180deg,rgba(40,18,16,.5) 0%,rgba(58,22,22,.4) 52%,rgba(40,18,16,.6) 100%);}
+.price-box > *{position:relative;z-index:2;}
+.price-box .label{font-family:'EB Garamond',serif;letter-spacing:2px;text-transform:uppercase;font-size:.82rem;color:#E9C87F;margin-bottom:14px;text-shadow:0 1px 5px rgba(0,0,0,.75);}
+.price-box .amount{font-family:'Fraunces',serif;font-size:clamp(2.1rem,5vw,2.75rem);font-weight:600;margin-bottom:8px;color:#F7EEDA;text-shadow:0 2px 12px rgba(0,0,0,.9);}
+.price-box .note{font-size:1rem;line-height:1.6;margin:0 0 24px;color:#F3EADB;text-shadow:0 1px 5px rgba(0,0,0,.7);}
+
+/* Gallery ------------------------------------------------------------------ */
+.gallery-head{text-align:center;margin-bottom:34px;}
+.gallery-head .eyebrow{font-family:'EB Garamond',serif;letter-spacing:3px;text-transform:uppercase;font-size:.85rem;color:var(--gold);}
+.scene{margin-bottom:48px;}
+.scene:last-child{margin-bottom:0;}
+.scene__head{text-align:center;margin-bottom:20px;}
+.scene__head h3{font-size:1.5rem;margin-bottom:6px;}
+.scene__head p{margin:0;font-size:1.05rem;color:#6B5A44;}
+.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+.gallery-grid figure{margin:0;}
+.gallery-grid .ph{height:250px;overflow:hidden;border:1px solid #D3BE99;box-shadow:0 6px 16px rgba(46,27,20,.14);}
+.gallery-grid img{width:100%;height:100%;object-fit:cover;}
+.gallery-grid figcaption{margin-top:11px;text-align:center;font-size:.95rem;color:#6E5A42;}
+
+/* Utisci ------------------------------------------------------------------- */
+.utisci-head{text-align:center;margin-bottom:44px;}
+.utisci-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;}
+.utisak{background:var(--card);border:1px solid var(--border);padding:32px 30px;display:flex;flex-direction:column;min-height:250px;}
+.utisak .mark{font-family:'Fraunces',serif;font-size:3rem;line-height:.6;color:var(--gold2);}
+.utisak p{font-style:italic;font-size:1.12rem;line-height:1.6;color:var(--text);margin:12px 0 0;flex-grow:1;}
+.utisak .by{display:flex;align-items:center;gap:10px;margin-top:16px;}
+.utisak .by i{width:22px;height:1px;background:var(--gold2);display:inline-block;flex:0 0 auto;}
+.utisak .by span{font-size:.95rem;color:var(--wine2);font-style:normal;}
+
+/* Kako doći + mapa --------------------------------------------------------- */
+.map-split{display:flex;gap:clamp(28px,5vw,56px);align-items:center;flex-wrap:wrap;}
+.map-split__text{flex:1 1 380px;min-width:0;}
+.map-split__text p{font-size:1.1rem;line-height:1.75;color:var(--text);margin:0 0 14px;}
+.map-wrap{flex:1 1 460px;min-width:0;}
+.map-frame{position:relative;width:100%;aspect-ratio:16/11;border:1px solid #C2C7AE;background:#DCE0CE;overflow:hidden;}
+.map-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0;}
+.map-link{display:inline-block;margin-top:14px;font-size:1rem;}
+
+/* Footer ------------------------------------------------------------------- */
+.site-footer{background:var(--ink);color:#E8DDC8;padding:56px 0 40px;position:relative;overflow:hidden;}
+.footer-cols{display:flex;justify-content:space-between;gap:48px;flex-wrap:wrap;}
+.footer-cols .about{max-width:340px;flex:1 1 280px;}
+.footer-cols .about .name{font-family:'Fraunces',serif;font-size:1.35rem;color:var(--parchment);margin-bottom:14px;}
+.footer-cols .about p{font-size:1rem;line-height:1.7;margin:0;color:#C9BCA1;}
+.footer-col{flex:1 1 220px;font-size:1rem;line-height:1.9;color:#C9BCA1;}
+.footer-col .h{color:var(--gold);letter-spacing:2px;font-size:.8rem;text-transform:uppercase;margin-bottom:10px;}
+.footer-col a{color:#C9BCA1;text-decoration:none;}
+.footer-col a:hover{color:var(--cream);}
+.copyright{border-top:1px solid #4A3226;margin-top:28px;padding-top:18px;font-size:.9rem;color:#8F7E66;}
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+@media (max-width:900px){
+  .vino-grid{grid-template-columns:repeat(2,1fr);}
+  .info-grid{grid-template-columns:repeat(2,1fr);}
+  .utisci-grid{grid-template-columns:repeat(2,1fr);}
+  .gallery-grid{grid-template-columns:repeat(2,1fr);}
+  .wine-grid{grid-template-columns:1fr;}
+}
+@media (max-width:680px){
+  body{font-size:17px;}
+  .site-header .wrap{flex-direction:column;text-align:center;gap:10px;}
+  .nav{justify-content:center;}
+  .split,.split--reverse{flex-direction:column;}
+  .include{flex-direction:column;}
+  .price-box{max-width:none;width:100%;}
+  .map-split{flex-direction:column;}
+  .vino-grid,.info-grid,.utisci-grid,.gallery-grid{grid-template-columns:1fr;}
+  .wine-card{flex-direction:column;min-height:0;}
+  .wine-card__img{width:100%;flex:0 0 auto;height:280px;}
+  .wine-card__img span{writing-mode:horizontal-tb;transform:none;}
+  .hero__btns .btn{flex:1 1 auto;text-align:center;}
+  .orn::before,.orn::after{display:none;}
+}
